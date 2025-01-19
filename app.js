@@ -2,8 +2,6 @@
 let nomesAmigos = [];
 
 
-
-
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
@@ -30,7 +28,7 @@ function adicionarAmigo(){
 }  
 
 function gerarSorteio() {
-    let numero = (parseInt(Math.random() * nomesAmigos.length()));
+    let numero = (parseInt(Math.random() * nomesAmigos.length));
     return numero;
 }
 
