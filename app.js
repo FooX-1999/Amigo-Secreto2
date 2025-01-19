@@ -1,5 +1,6 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 let nomesAmigos = [];
+let listaNomes = document.getElementById('listaAmigos');
 
 
 function exibirTextoNaTela(tag, texto) {
@@ -15,22 +16,18 @@ function sortearAmigo(){
     console.log(nomesAmigos[sorteio]) 
 }
 
-function adicionarAmigo(novoNome){
-    
+function adicionarAmigo(){
     let nomes = document.querySelector('input').value;
-    nomesAmigos.push(nomes);
-    if (!nomes.includes(novoNome)) {
-        
-        const novoItem = document.createElement('li');
-        novoItem.textContent = novoNome;
-
-    } else {
-        alert(`existe esse nome na lista`);
+    
+    if (nomes == ""){
+        alert(`Erro Digite um nome?`);
+    }else {
+        nomesAmigos.push(nomes);
+        console.log(nomesAmigos);
+        mostrarLista();
     }
+
     limparCampo();
-    mostrarLista();
-    
-    
 }  
 
 function gerarSorteio() {
@@ -39,19 +36,11 @@ function gerarSorteio() {
 }
 
 function mostrarLista() {
-    let listaNomes = document.getElementById('listaAmigos');
-
-    const novoNome = document.createElement('li');
-    novoNome.textContent = nomesAmigos;
-
-    listaNomes.appendChild(novoNome);
-
-
-    // nomesAmigos.forEach(nomesAmigos => {
-    //     let nomeLista = document.createElement('li');
-    //     nomeLista.textContent = nomesAmigos;
-    //     listaNomes.appendChild(nomeLista);
-    // })
+   
+    let itemLista = document.createElement('li');
+    listaNomes.appendChild(itemLista);
+        // console.log();
+    itemLista.textContent = nomesAmigos[nomesAmigos.length - 1];
 }
 
 
