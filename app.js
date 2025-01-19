@@ -1,6 +1,7 @@
 //O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 let nomesAmigos = [];
 let listaNomes = document.getElementById('listaAmigos');
+let resultado = document.getElementById(`resultado`);
 
 
 function exibirTextoNaTela(tag, texto) {
@@ -12,8 +13,10 @@ function exibirTextoNaTela(tag, texto) {
 
 function sortearAmigo(){
     let sorteio = gerarSorteio();
-    exibirTextoNaTela("ul", nomesAmigos[sorteio]); 
-    console.log(nomesAmigos[sorteio]) 
+    let amigoSorteado = nomesAmigos[sorteio];
+
+    resultado.textContent = `O amigo sorteado é: ${amigoSorteado}`;
+    limpaLista(listaNomes);
 }
 
 function adicionarAmigo(){
@@ -27,7 +30,7 @@ function adicionarAmigo(){
         mostrarLista();
     }
 
-    limparCampo();
+    limparCampo(); 
 }  
 
 function gerarSorteio() {
@@ -39,11 +42,12 @@ function mostrarLista() {
    
     let itemLista = document.createElement('li');
     listaNomes.appendChild(itemLista);
-        // console.log();
     itemLista.textContent = nomesAmigos[nomesAmigos.length - 1];
 }
 
-
+function limpaLista(tag) {
+    tag.innerHTML = " "
+}
 
 function limparCampo() {
     let limpeza = document.querySelector('input');
