@@ -15,3 +15,5 @@ Um aplicativo simples para sortear o amigo secreto de forma aleatória e diverti
 [![CSS](https://img.shields.io/badge/css-blue?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![HTML5](https://img.shields.io/badge/html5-E34F26?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
+
+
